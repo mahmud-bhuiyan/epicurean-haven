@@ -2,7 +2,7 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const Banner = () => {
-  const bannerImages = [
+  const images = [
     "https://i.ibb.co/bKfnyrd/01.jpg",
     "https://i.ibb.co/Mgw5Qnr/02.jpg",
     "https://i.ibb.co/CsDbc8W/03.png",
@@ -12,8 +12,13 @@ const Banner = () => {
   ];
 
   return (
-    <Carousel>
-      {bannerImages.map((image, index) => (
+    <Carousel
+      infiniteLoop={true}
+      autoPlay={true}
+      interval={3000}
+      showStatus={false}
+    >
+      {images.map((image, index) => (
         <div key={index}>
           <img src={image} alt="" />
         </div>
