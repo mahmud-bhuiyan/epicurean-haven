@@ -16,7 +16,7 @@ const Category = () => {
     },
     {
       image: "https://i.ibb.co/JFxMZHs/slide1.jpg",
-      text: "Soup",
+      text: "Almond Salad",
     },
     {
       image: "https://i.ibb.co/6RDs3Qz/slide3.jpg",
