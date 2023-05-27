@@ -15,13 +15,12 @@ const Testimonials = () => {
     fetch("reviews.json")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setReviews(data);
       })
       .catch((error) => {
         console.log(error.message);
       });
-  });
+  }, []);
 
   return (
     <div>
