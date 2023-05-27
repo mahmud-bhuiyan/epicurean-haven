@@ -29,7 +29,7 @@ const Category = () => {
   ];
 
   return (
-    <section className="my-10">
+    <section className="mx-6 lg:mx-0 my-10 hidden md:block">
       <SectionTitle
         subHeading={"From 11:00am to 10.00pm"}
         heading={"ORDER ONLINE"}
