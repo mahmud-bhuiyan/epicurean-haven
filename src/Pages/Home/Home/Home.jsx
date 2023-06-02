@@ -6,10 +6,14 @@ import PopularMenu from "../PopularMenu/PopularMenu";
 import Recommends from "../Recommends/Recommends";
 import Testimonials from "../Testimonials/Testimonials";
 import WebsitePromo from "../WebsitePromo/WebsitePromo";
+import { Helmet } from "react-helmet-async";
 
 const Home = () => {
   return (
     <div>
+      <Helmet>
+        <title>Epicurean Haven | Home</title>
+      </Helmet>
       <Banner></Banner>
       <div className="max-w-screen-xl mx-auto">
         <Category></Category>
