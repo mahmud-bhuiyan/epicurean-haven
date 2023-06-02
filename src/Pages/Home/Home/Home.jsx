@@ -1,4 +1,4 @@
-import CallUsCard from "../../../Components/CallUsCard/CallUsCard";
+import CallUsCard from "../CallUsCard/CallUsCard";
 import Banner from "../Banner/Banner";
 import Category from "../Category/Category";
 import Featured from "../Featured/Featured";
