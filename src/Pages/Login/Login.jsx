@@ -1,12 +1,16 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   loadCaptchaEnginge,
   LoadCanvasTemplate,
   validateCaptcha,
 } from "react-simple-captcha";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const Login = () => {
+  const { signIn } = useContext(AuthContext);
+  const [error, setError] = useState("");
+
   const captchaRef = useRef(null);
   const [disabled, setDisabled] = useState(true);
 
@@ -20,6 +24,22 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
     console.log(email, password);
+    signIn(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage =
+          errorCode === "auth/wrong-password"
+            ? "Incorrect password"
+            : errorCode === "auth/user-not-found"
+            ? "No user found with this email"
+            : error.message;
+        console.log(errorMessage);
+        setError(errorMessage);
+      });
   };
 
   const handleValidateCaptcha = () => {
@@ -63,6 +83,7 @@ const Login = () => {
                     required
                   />
                 </div>
+
                 <div className="form-control">
                   <label className="label">
                     <span className="label-text">Password</span>
@@ -75,6 +96,7 @@ const Login = () => {
                     required
                   />
                 </div>
+
                 <div className="form-control">
                   <label className="label">
                     <LoadCanvasTemplate />
@@ -94,6 +116,7 @@ const Login = () => {
                     Validate
                   </button>
                 </div>
+
                 <div className="form-control mt-6">
                   <input
                     disabled={disabled}
@@ -103,6 +126,8 @@ const Login = () => {
                   />
                 </div>
               </form>
+
+              <p className="text-center text-red-600 font-bold">{error}</p>
 
               <p className="text-center my-4">
                 New to Epicurean Haven?{" "}
