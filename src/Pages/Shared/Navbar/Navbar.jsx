@@ -7,31 +7,30 @@ const Navbar = () => {
       <li>
         <Link to="/">Home</Link>
       </li>
-      <li>
+      {/* <li>
         <Link to="/contact">Contact Us</Link>
-      </li>
-      <li>
+      </li> */}
+      {/* <li>
         <Link to="/dashboard">Dashboard</Link>
-      </li>
+      </li> */}
       <li>
         <Link to="/menu">Our Menu</Link>
       </li>
       <li>
-        <Link to="/shop">Our Shop</Link>
+        <Link to="/order">Order</Link>
       </li>
       <li>
         <Link to="/cart">
-          {/* Cart */}
           <FaShoppingCart />
-          <span className="badge">3</span>
+          {/* <span className="badge">3</span> */}
         </Link>
       </li>
-      <li>
+      {/* <li>
         <Link to="/Login">Login</Link>
       </li>
       <li>
         <Link to="/Logout">Logout</Link>
-      </li>
+      </li>*/}
       <li>
         <Link to="/user">
           <FaUser />
