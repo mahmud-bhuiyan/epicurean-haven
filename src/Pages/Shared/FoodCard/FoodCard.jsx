@@ -13,7 +13,7 @@ const FoodCard = ({ item }) => {
         <h2 className="text-2xl font-bold">{name}</h2>
         <p>{recipe}</p>
         <div className="mt-4">
-          <button className="uppercase btn btn-outline btn-info border-0 border-b-4">
+          <button className="uppercase btn btn-outline btn-info border-0 border-b-4 bg-slate-100 border-orange-400">
             Add to cart
           </button>
         </div>
