@@ -6,6 +6,7 @@ import {
   validateCaptcha,
 } from "react-simple-captcha";
 import { AuthContext } from "../../Providers/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const { signIn } = useContext(AuthContext);
@@ -53,6 +54,9 @@ const Login = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Epicurean Haven | Login</title>
+      </Helmet>
       <div
         className="hero min-h-screen"
         style={{
@@ -72,22 +76,16 @@ const Login = () => {
 
               <form onSubmit={handleLogin}>
                 <div className="form-control">
-                  <label className="label">
-                    <span className="label-text">Email</span>
-                  </label>
                   <input
                     type="email"
                     name="email"
                     placeholder="email"
-                    className="input input-sm input-bordered"
+                    className="input input-sm input-bordered mb-4"
                     required
                   />
                 </div>
 
                 <div className="form-control">
-                  <label className="label">
-                    <span className="label-text">Password</span>
-                  </label>
                   <input
                     type="password"
                     name="password"
