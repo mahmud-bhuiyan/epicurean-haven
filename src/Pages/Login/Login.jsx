@@ -1,5 +1,5 @@
 import { useContext, useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   loadCaptchaEnginge,
   LoadCanvasTemplate,
@@ -11,6 +11,11 @@ import { Helmet } from "react-helmet-async";
 const Login = () => {
   const { signIn } = useContext(AuthContext);
   const [error, setError] = useState("");
+
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/";
 
   const captchaRef = useRef(null);
   const [disabled, setDisabled] = useState(true);
@@ -24,11 +29,11 @@ const Login = () => {
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
     signIn(email, password)
       .then((result) => {
         const user = result.user;
         console.log(user);
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         const errorCode = error.code;

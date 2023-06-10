@@ -3,7 +3,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
-import "./OrderTab.css";
 
 const OrderTab = ({ items }) => {
   const itemsPerPage = 6;
@@ -16,8 +15,27 @@ const OrderTab = ({ items }) => {
     },
   };
 
+  const bulletStyles = `
+    .swiper-pagination-bullet {
+      width: 30px;
+      height: 30px;
+      text-align: center;
+      line-height: 30px;
+      font-size: 12px;
+      color: #000;
+      opacity: 1;
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .swiper-pagination-bullet-active {
+      color: #fff;
+      background: #007aff;
+    }
+  `;
+
   return (
     <>
+      <style>{bulletStyles}</style>
       <div className="mb-20">
         <Swiper
           pagination={pagination}

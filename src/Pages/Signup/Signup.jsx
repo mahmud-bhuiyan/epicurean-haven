@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { useForm } from "react-hook-form";
 import { Helmet } from "react-helmet-async";
@@ -21,6 +21,7 @@ const Signup = () => {
 
   const { createUser } = useContext(AuthContext);
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const onSubmit = (data) => {
     console.log(data);
@@ -33,6 +34,8 @@ const Signup = () => {
         })
           .then(() => {
             console.log(user);
+            navigate("/");
+            window.location.reload();
           })
           .catch((error) => {
             console.log(error.message);

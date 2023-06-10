@@ -1,7 +1,21 @@
 import { Link } from "react-router-dom";
 import { FaShoppingCart, FaUser } from "react-icons/fa";
+import { useContext } from "react";
+import { AuthContext } from "../../../Providers/AuthProvider";
 
 const Navbar = () => {
+  const { user, logout } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logout()
+      .then(() => {
+        console.log("Sign-out successful");
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
+
   const navLinks = (
     <>
       <li>
@@ -19,20 +33,41 @@ const Navbar = () => {
           <span className="badge">3</span>
         </Link>
       </li>
-      <li>
-        <Link to="/signup">Sign Up</Link>
-      </li>
-      <li>
-        <Link to="/login">Login</Link>
-      </li>
-      <li>
-        <Link to="/logout">Logout</Link>
-      </li>
-      <li>
-        <Link to="/user">
-          <FaUser />
-        </Link>
-      </li>
+
+      {user ? (
+        <>
+          <li>
+            <button onClick={handleLogOut}>Logout</button>
+          </li>
+        </>
+      ) : (
+        <>
+          <li>
+            <Link to="/signup">Sign Up</Link>
+          </li>
+          <li>
+            <Link to="/login">Login</Link>
+          </li>
+        </>
+      )}
+
+      {user?.photoURL ? (
+        <li>
+          <Link to="/" title={user.displayName} className="flex items-center">
+            <img
+              src={user.photoURL}
+              alt={user.displayName}
+              className="w-8 h-8 rounded-full"
+            />
+          </Link>
+        </li>
+      ) : (
+        <li>
+          <Link to="/user">
+            <FaUser />
+          </Link>
+        </li>
+      )}
     </>
   );
 
