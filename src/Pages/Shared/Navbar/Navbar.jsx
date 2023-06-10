@@ -27,9 +27,6 @@ const Navbar = () => {
         <Link to="/contact">Contact Us</Link>
       </li>
       <li>
-        <Link to="/dashboard/mycart">Dashboard</Link>
-      </li>
-      <li>
         <Link to="/menu">Our Menu</Link>
       </li>
       <li>
