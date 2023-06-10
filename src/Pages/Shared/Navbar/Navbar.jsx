@@ -27,10 +27,13 @@ const Navbar = () => {
         <Link to="/contact">Contact Us</Link>
       </li>
       <li>
+        <Link to="/dashboard/mycart">Dashboard</Link>
+      </li>
+      <li>
         <Link to="/menu">Our Menu</Link>
       </li>
       <li>
-        <Link to="/cart">
+        <Link to="/dashboard/mycart">
           <FaShoppingCart />
           <span className="badge">{cart?.length || 0}</span>
         </Link>
