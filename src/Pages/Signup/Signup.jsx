@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { Helmet } from "react-helmet-async";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
-import { updateProfile } from "firebase/auth";
+import Swal from "sweetalert2";
 
 const Signup = () => {
   const {
@@ -19,8 +19,9 @@ const Signup = () => {
   const password = watch("password");
   const confirm = watch("confirm");
 
-  const { createUser } = useContext(AuthContext);
+  const { createUser, updateUserProfile } = useContext(AuthContext);
   const [error, setError] = useState("");
+
   const navigate = useNavigate();
 
   const onSubmit = (data) => {
@@ -28,19 +29,22 @@ const Signup = () => {
     if (password === confirm) {
       createUser(data.email, data.password).then((result) => {
         const user = result.user;
-        updateProfile(user, {
-          displayName: data.name,
-          photoURL: data.photo,
-        })
+        updateUserProfile(data.name, data.photo)
           .then(() => {
             console.log(user);
             navigate("/");
-            window.location.reload();
+            Swal.fire({
+              position: "top-end",
+              icon: "success",
+              title: "User created Successful",
+              showConfirmButton: false,
+              timer: 1000,
+            });
+            reset();
           })
           .catch((error) => {
             console.log(error.message);
           });
-        reset();
       });
     } else {
       setError("Password and confirm password do not match!");
