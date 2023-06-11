@@ -8,6 +8,7 @@ import {
 import { AuthContext } from "../../Providers/AuthProvider";
 import { Helmet } from "react-helmet-async";
 import Swal from "sweetalert2";
+import SocialLogin from "../../Components/SocialLogin/SocialLogin";
 
 const Login = () => {
   const { signIn } = useContext(AuthContext);
@@ -136,6 +137,7 @@ const Login = () => {
                   Sign Up
                 </Link>
               </p>
+              <SocialLogin></SocialLogin>
             </div>
           </div>
         </div>
