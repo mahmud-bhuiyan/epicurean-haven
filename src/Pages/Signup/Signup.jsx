@@ -46,10 +46,9 @@ const Signup = () => {
                   navigate("/");
                   Swal.fire({
                     position: "top-end",
-                    icon: "success",
-                    title: "User created Successful",
+                    title: "User created Successfully",
                     showConfirmButton: false,
-                    timer: 1000,
+                    timer: 1500,
                   });
                   reset();
                 }

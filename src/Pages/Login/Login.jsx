@@ -33,7 +33,6 @@ const Login = () => {
         const user = result.user;
         console.log(user);
         Swal.fire({
-          icon: "success",
           title: "Login Successful",
           showConfirmButton: false,
           timer: 1000,
