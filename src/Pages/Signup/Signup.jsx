@@ -33,7 +33,7 @@ const Signup = () => {
           .then(() => {
             console.log(user);
             const savedUser = { name: data.name, email: data.email };
-            fetch(`http://localhost:5000/users`, {
+            fetch(`https://epicurean-haven-server.vercel.app/users`, {
               method: "POST",
               headers: {
                 "content-type": "application/json",

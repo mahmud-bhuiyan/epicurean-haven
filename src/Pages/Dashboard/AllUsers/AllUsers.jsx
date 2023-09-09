@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 
 const AllUsers = () => {
   const { data: users = [], refetch } = useQuery(["users"], async () => {
-    const res = await fetch(`http://localhost:5000/users`);
+    const res = await fetch(`https://epicurean-haven-server.vercel.app/users`);
     return res.json();
   });
 
@@ -20,9 +20,12 @@ const AllUsers = () => {
       confirmButtonText: `Yes, make ${user.name} an ADMIN!`,
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/users/admin/${user._id}`, {
-          method: "PATCH",
-        })
+        fetch(
+          `https://epicurean-haven-server.vercel.app/users/admin/${user._id}`,
+          {
+            method: "PATCH",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             if (data.modifiedCount) {
@@ -50,9 +53,12 @@ const AllUsers = () => {
       confirmButtonText: `Yes, delete ${user.name}!`,
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/users/admin/${user._id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://epicurean-haven-server.vercel.app/users/admin/${user._id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {

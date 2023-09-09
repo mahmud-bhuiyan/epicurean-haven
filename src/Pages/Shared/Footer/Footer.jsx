@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
+import logo from "../../../../public/logo.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -9,7 +10,7 @@ const Footer = () => {
       <footer className="footer p-10 bg-neutral text-neutral-content">
         <div>
           <Link to="/">
-            <img src="" alt="Epicurean Haven" />
+            <img src={logo} alt="Epicurean Haven" width={30} height={30} />
           </Link>
           <p>
             Epicurean Haven

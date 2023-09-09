@@ -23,9 +23,9 @@ const Navbar = () => {
       <li>
         <Link to="/">Home</Link>
       </li>
-      <li>
+      {/* <li>
         <Link to="/contact">Contact Us</Link>
-      </li>
+      </li> */}
       <li>
         <Link to="/menu">Our Menu</Link>
       </li>
@@ -65,7 +65,8 @@ const Navbar = () => {
         </li>
       ) : (
         <li>
-          <Link to="/user">
+          <Link to="/">
+            {/* <Link to="/user"> */}
             <FaUser />
           </Link>
         </li>
