@@ -38,7 +38,7 @@ const MyCart = () => {
   };
 
   return (
-    <div className="w-full lg:mx-48">
+    <div className="max-w-screen-xl mx-auto pt-20 lg:mx-48">
       <Helmet>
         <title>Epicurean Haven | My Cart</title>
       </Helmet>

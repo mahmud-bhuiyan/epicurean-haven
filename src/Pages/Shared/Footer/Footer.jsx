@@ -7,7 +7,7 @@ const Footer = () => {
 
   return (
     <>
-      <footer className="footer footer-center p-10 bg-black/90  text-neutral-content rounded">
+      <footer className="footer footer-center p-10 bg-black/90  text-neutral-content">
         <div>
           <Link to="/">
             <img src={logo} alt="Epicurean Haven" width={30} height={30} />

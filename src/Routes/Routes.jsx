@@ -35,6 +35,10 @@ const router = createBrowserRouter([
         path: "/signup",
         element: <Signup></Signup>,
       },
+      {
+        path: "mycart",
+        element: <MyCart></MyCart>,
+      },
     ],
   },
   {
@@ -45,10 +49,6 @@ const router = createBrowserRouter([
       </PrivateRoute>
     ),
     children: [
-      {
-        path: "mycart",
-        element: <MyCart></MyCart>,
-      },
       {
         path: "allusers",
         element: <AllUsers></AllUsers>,
