@@ -4,7 +4,9 @@ import "./Banner.css";
 
 const Banner = () => {
   const images = [
-    "https://i.ibb.co/bKfnyrd/01.jpg",
+    "https://i.ibb.co/bQnXXW4/Untitled-3.png",
+    "https://i.ibb.co/hMRrV96/08.png",
+    "https://i.ibb.co/2Mt6t7k/9.png",
     "https://i.ibb.co/Mgw5Qnr/02.jpg",
     "https://i.ibb.co/CsDbc8W/03.png",
     "https://i.ibb.co/xGMZ9Vn/04.jpg",
