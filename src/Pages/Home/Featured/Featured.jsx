@@ -1,20 +1,18 @@
-import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
-
 const Featured = () => {
   return (
     <div className="bg-[url('https://i.ibb.co/t8GvCqt/featured.jpg')] pt-8 bg-cover bg-center my-16 bg-fixed text-white">
-      <div>
-        <SectionTitle
-          subHeading="Check it out"
-          heading="FROM OUR MENU"
-        ></SectionTitle>
+      <div className="mx-auto md:w-4/12 text-center my-8">
+        <p className="text-black font-bold text-xl mb-2">---Check it out---</p>
+        <h3 className="text-3xl uppercase border-y-4 py-4 text-black font-semibold">
+          FROM OUR MENU
+        </h3>
       </div>
-      <div className="md:flex justify-center items-center md:gap-10 p-16 bg-slate-800 opacity-70 rounded">
+      <div className="md:flex justify-center items-center md:gap-10 p-16 bg-slate-800 opacity-80 rounded">
         <div>
           <img
             className="rounded-lg"
             src="https://i.ibb.co/t8GvCqt/featured.jpg"
-            alt=""
+            alt="featured"
           />
         </div>
         <div className="mt-4 md:mt-0 space-y-4">

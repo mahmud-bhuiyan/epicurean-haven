@@ -7,7 +7,7 @@ const Footer = () => {
 
   return (
     <>
-      <footer className="footer footer-center p-10 bg-base-200 text-base-content rounded">
+      <footer className="footer footer-center p-10 bg-black/90  text-neutral-content rounded">
         <div>
           <Link to="/">
             <img src={logo} alt="Epicurean Haven" width={30} height={30} />
@@ -36,7 +36,7 @@ const Footer = () => {
           </div>
         </nav>
       </footer>
-      <footer className="footer px-10 py-4 bg-base-300 text-base-content border-base-300">
+      <footer className="footer px-10 py-4 bg-black/90 text-neutral-content border-base-300">
         <div className="items-center grid-flow-col">
           <p>© {currentYear} Epicurean Haven - All rights reserved</p>
         </div>
