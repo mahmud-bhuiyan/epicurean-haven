@@ -102,7 +102,7 @@ const Navbar = () => {
               {navLinks}
             </ul>
           </div>
-          <Link to="/" className="btn btn-ghost normal-case text-xl">
+          <Link to="/" className="normal-case text-xl">
             <span>Epicurean Haven</span>
           </Link>
         </div>

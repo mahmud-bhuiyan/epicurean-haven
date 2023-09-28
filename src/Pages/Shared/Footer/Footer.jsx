@@ -7,7 +7,7 @@ const Footer = () => {
 
   return (
     <>
-      <footer className="footer p-10 bg-neutral text-neutral-content">
+      <footer className="footer footer-center p-10 bg-base-200 text-base-content rounded">
         <div>
           <Link to="/">
             <img src={logo} alt="Epicurean Haven" width={30} height={30} />
@@ -18,28 +18,37 @@ const Footer = () => {
             Indulge in the Finest Culinary Delights
           </p>
         </div>
-        <div>
-          <span className="footer-title">Social</span>
+        <nav>
           <div className="grid grid-flow-col gap-4">
-            <Link to="#">
-              <FaFacebookF className="text-2xl" />
-            </Link>
-            <Link to="#">
-              <FaInstagram className="text-2xl" />
-            </Link>
-            <Link to="#">
-              <FaYoutube className="text-2xl" />
-            </Link>
+            <div>
+              <div className="grid grid-flow-col gap-4">
+                <Link to="#">
+                  <FaFacebookF className="text-2xl" />
+                </Link>
+                <Link to="#">
+                  <FaInstagram className="text-2xl" />
+                </Link>
+                <Link to="#">
+                  <FaYoutube className="text-2xl" />
+                </Link>
+              </div>
+            </div>
           </div>
-        </div>
+        </nav>
       </footer>
-      <footer className="footer px-10 py-4 bg-black text-neutral-content border-base-300">
+      <footer className="footer px-10 py-4 bg-base-300 text-base-content border-base-300">
         <div className="items-center grid-flow-col">
           <p>© {currentYear} Epicurean Haven - All rights reserved</p>
         </div>
         <div className="md:place-self-center md:justify-self-end">
           <div className="grid grid-flow-col gap-4">
-            <p>Designed & Developed By : Mahmud</p>
+            <a
+              href="https://mahmud-bhuiyan.web.app/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Designed & Developed By: Mahmud
+            </a>
           </div>
         </div>
       </footer>

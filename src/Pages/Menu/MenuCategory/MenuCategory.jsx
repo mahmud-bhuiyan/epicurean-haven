@@ -13,6 +13,7 @@ const MenuCategory = ({ items, title, text, img }) => {
             <MenuItem key={item._id} item={item}></MenuItem>
           ))}
         </div>
+
         {title && (
           <div className="flex justify-center mt-8">
             <Link to={`/order/${title}`}>
