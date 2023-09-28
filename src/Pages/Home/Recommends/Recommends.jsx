@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
 
 const Recommends = () => {
@@ -35,9 +36,11 @@ const Recommends = () => {
               <h2 className="text-2xl font-bold">{slide.name}</h2>
               <p>{slide.text}</p>
               <div className="mt-4">
-                <button className="uppercase btn btn-outline btn-info border-0 border-b-4">
-                  Add to cart
-                </button>
+                <Link to="/menu">
+                  <button className="uppercase btn btn-outline btn-info border-0 border-b-4">
+                    See Items
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
